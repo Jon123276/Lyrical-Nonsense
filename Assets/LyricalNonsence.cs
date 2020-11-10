@@ -50,6 +50,7 @@ public class LyricalNonsence : MonoBehaviour
         new Songs { Band = "Imperial Circus Dead Decadence", Song = "Yomi yori Kikoyu, Koukoku No Hi To Honoo No Syoujo", SongParts = new string[] { "Yomi n1", "Yomi n2", "Yomi n3"}},
         new Songs { Band = "Irreversible Mechanism", Song = "Outburst", SongParts = new string[] { "Out n1", "Out n2", "Out n3"}},
         new Songs { Band = "Frontierer", Song = "The Collapse", SongParts = new string[] { "Collapse n1", "Collapse n2", "Collapse n3"}},
+        new Songs { Band = "Joe Sparks", Song = "You Are Dead", SongParts = new string[] { "Dead n1", "Dead n2", "Dead n3"}},
         
     };
 
@@ -72,7 +73,7 @@ public class LyricalNonsence : MonoBehaviour
             else
             {
                 songSelect++;
-                songSelect %= 18;
+                songSelect %= 19;
                 Displays[0].text = "";
                 Displays[1].text = "";
                 StartCoroutine(ChangeSongs(songSelect));
@@ -365,6 +366,19 @@ public class LyricalNonsence : MonoBehaviour
                 for (int i = 0; i < "Frontierer".Length; i++)
                 {
                     Displays[1].text += "Frontierer"[i];
+                    yield return new WaitForSeconds(0.01f);
+                }
+                break;
+            case 18:
+                Displays[1].fontSize = 90;
+                for (int i = 0; i < "You Are Dead".Length; i++)
+                {
+                    Displays[0].text += "You Are Dead"[i];
+                    yield return new WaitForSeconds(0.01f);
+                }
+                for (int i = 0; i < "Joe Sparks".Length; i++)
+                {
+                    Displays[1].text += "Joe Sparks"[i];
                     yield return new WaitForSeconds(0.01f);
                 }
                 break;
